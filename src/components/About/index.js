@@ -16,7 +16,7 @@ class Home extends React.PureComponent {
 
         <div className="container page">
           <div className="row">
-            <h1>This is the home page</h1>
+            <h1>This is the about page</h1>
           </div>
         </div>
 

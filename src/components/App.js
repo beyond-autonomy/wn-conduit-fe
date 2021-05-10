@@ -6,8 +6,11 @@ import { APP_LOAD, REDIRECT } from '../constants/actionTypes'
 import { Route, Switch } from 'react-router-dom'
 import { store } from '../store'
 import { push } from 'connected-react-router'
-// const Home = lazy(() => import('../components/Home'/* webpackChunkName: "Home", webpackPreload: true  */))
+// const Blog = lazy(() => import('../components/Blog'/* webpackChunkName: "Blog", webpackPreload: true  */))
+import About from '../components/About'
+import Blog from '../components/Blog'
 import Home from '../components/Home'
+import Solution from '../components/Solution'
 const Article = lazy(() => import('../components/Article' /* webpackChunkName: "Article", webpackPrefetch: true  */))
 const Editor = lazy(() => import('../components/Editor'/* webpackChunkName: "Editor", webpackPrefetch: true  */))
 const Login = lazy(() => import('../components/Login'/* webpackChunkName: "Login", webpackPrefetch: true  */))
@@ -60,8 +63,11 @@ class App extends React.PureComponent {
             <Suspense fallback={<p>Loading...</p>}>
               <Switch>
                 <Route exact path='/' component={Home} />
+                <Route path='/about' component={About} />
+                <Route path='/blog' component={Blog} />
                 <Route path='/login' component={Login} />
                 <Route path='/register' component={Register} />
+                <Route path='/solution' component={Solution} />
                 <Route path='/editor/:slug' component={Editor} />
                 <Route path='/editor' component={Editor} />
                 <Route path='/article/:id' component={Article} />

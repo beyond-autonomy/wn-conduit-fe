@@ -9,7 +9,7 @@ import {
   DELETE_ARTICLE,
   ARTICLE_PAGE_UNLOADED,
   EDITOR_PAGE_UNLOADED,
-  HOME_PAGE_UNLOADED,
+  BLOG_PAGE_UNLOADED,
   PROFILE_PAGE_UNLOADED,
   PROFILE_FAVORITES_PAGE_UNLOADED,
   SETTINGS_PAGE_UNLOADED,
@@ -42,22 +42,22 @@ export default (state = defaultState, action) => {
     case SETTINGS_SAVED:
       return {
         ...state,
-        redirectTo: action.error ? null : '/',
+        redirectTo: action.error ? null : '/blog',
         currentUser: action.error ? null : action.payload.user
       };
     case LOGIN:
     case REGISTER:
       return {
         ...state,
-        redirectTo: action.error ? null : '/',
+        redirectTo: action.error ? null : '/blog',
         token: action.error ? null : action.payload.user.token,
         currentUser: action.error ? null : action.payload.user
       };
     case DELETE_ARTICLE:
-      return { ...state, redirectTo: '/' };
+      return { ...state, redirectTo: '/blog' };
     case ARTICLE_PAGE_UNLOADED:
     case EDITOR_PAGE_UNLOADED:
-    case HOME_PAGE_UNLOADED:
+    case BLOG_PAGE_UNLOADED:
     case PROFILE_PAGE_UNLOADED:
     case PROFILE_FAVORITES_PAGE_UNLOADED:
     case SETTINGS_PAGE_UNLOADED:

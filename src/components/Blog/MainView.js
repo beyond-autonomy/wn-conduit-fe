@@ -16,7 +16,7 @@ const YourFeedTab = React.memo(props => {
         <button type='button'
           className={props.tab === 'feed' ? 'nav-link active' : 'nav-link'}
           onClick={clickHandler}>
-          Your Feed
+          People You Follow
         </button>
       </li>
     )
@@ -34,7 +34,7 @@ const GlobalFeedTab = React.memo(props => {
       <button type='button'
         className={props.tab === 'all' ? 'nav-link active' : 'nav-link'}
         onClick={clickHandler}>
-        Global Feed
+        Latest Posts
       </button>
     </li>
   )
@@ -56,7 +56,7 @@ const TagFilterTab = React.memo(props => {
 
 const mapStateToProps = state => ({
   ...state.articleList,
-  tags: state.home.tags,
+  tags: state.blog.tags,
   token: state.common.token
 })
 
@@ -70,12 +70,12 @@ const MainView = React.memo(props => {
       <div className='feed-toggle'>
         <ul className='nav nav-pills outline-active'>
 
+          <GlobalFeedTab tab={props.tab} onTabClick={props.onTabClick} />
+
           <YourFeedTab
             token={props.token}
             tab={props.tab}
             onTabClick={props.onTabClick} />
-
-          <GlobalFeedTab tab={props.tab} onTabClick={props.onTabClick} />
 
           <TagFilterTab tag={props.tag} />
 

@@ -1,13 +1,13 @@
-import { HOME_PAGE_LOADED, HOME_PAGE_UNLOADED } from '../constants/actionTypes';
+import { BLOG_PAGE_LOADED, BLOG_PAGE_UNLOADED } from '../constants/actionTypes';
 
 export default (state = {}, action) => {
   switch (action.type) {
-    case HOME_PAGE_LOADED:
+    case BLOG_PAGE_LOADED:
       return {
         ...state,
         tags: action.payload && action.payload[0].tags
       };
-    case HOME_PAGE_UNLOADED:
+    case BLOG_PAGE_UNLOADED:
       return {};
     default:
       return state;

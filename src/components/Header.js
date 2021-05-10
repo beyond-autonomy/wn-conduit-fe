@@ -8,7 +8,7 @@ const LoggedOutView = React.memo(props => {
 
         <li className="nav-item">
           <Link to="/" className="nav-link">
-            Home
+            Blog
           </Link>
         </li>
 
@@ -37,7 +37,7 @@ const LoggedInView = React.memo(props => {
 
         <li className="nav-item">
           <Link to="/" className="nav-link">
-            Home
+            Blog
           </Link>
         </li>
 

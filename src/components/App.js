@@ -6,8 +6,8 @@ import { APP_LOAD, REDIRECT } from '../constants/actionTypes'
 import { Route, Switch } from 'react-router-dom'
 import { store } from '../store'
 import { push } from 'connected-react-router'
-// const Home = lazy(() => import('../components/Home'/* webpackChunkName: "Home", webpackPreload: true  */))
-import Home from '../components/Home'
+// const Blog = lazy(() => import('../components/Blog'/* webpackChunkName: "Blog", webpackPreload: true  */))
+import Blog from '../components/Blog'
 const Article = lazy(() => import('../components/Article' /* webpackChunkName: "Article", webpackPrefetch: true  */))
 const Editor = lazy(() => import('../components/Editor'/* webpackChunkName: "Editor", webpackPrefetch: true  */))
 const Login = lazy(() => import('../components/Login'/* webpackChunkName: "Login", webpackPrefetch: true  */))
@@ -59,7 +59,7 @@ class App extends React.PureComponent {
             currentUser={this.props.currentUser} />
             <Suspense fallback={<p>Loading...</p>}>
               <Switch>
-                <Route exact path='/' component={Home} />
+                <Route exact path='/' component={Blog} />
                 <Route path='/login' component={Login} />
                 <Route path='/register' component={Register} />
                 <Route path='/editor/:slug' component={Editor} />

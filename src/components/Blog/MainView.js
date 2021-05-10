@@ -56,7 +56,7 @@ const TagFilterTab = React.memo(props => {
 
 const mapStateToProps = state => ({
   ...state.articleList,
-  tags: state.home.tags,
+  tags: state.blog.tags,
   token: state.common.token
 })
 

@@ -15,7 +15,6 @@ const Promise = global.Promise;
 const mapStateToProps = state => ({
   ...state.blog,
   appName: state.common.appName,
-  token: state.common.token
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -45,7 +44,7 @@ class Blog extends React.PureComponent {
     return (
       <div className="home-page">
 
-        <Banner token={this.props.token} appName={this.props.appName} />
+        <Banner appName={this.props.appName} />
 
         <div className="container page">
           <div className="row">

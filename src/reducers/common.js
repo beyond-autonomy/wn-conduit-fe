@@ -37,7 +37,7 @@ export default (state = defaultState, action) => {
     case LOGOUT:
       return { ...state, redirectTo: '/', token: null, currentUser: null };
     case ARTICLE_SUBMITTED:
-      const redirectUrl = action.payload.article && `/article/${action.payload.article.slug}`;
+      const redirectUrl = action.payload ? action.payload.article && `/article/${action.payload.article.slug}` : '/blog';
       return { ...state, redirectTo: redirectUrl };
     case SETTINGS_SAVED:
       return {

@@ -56,7 +56,7 @@ class Article extends React.PureComponent {
 
           <div className="row article-content">
             <div className="col-xs-12">
-
+              <img src={this.props.article.image} width="80%" />
               <div dangerouslySetInnerHTML={markup}></div>
 
               <ul className="tag-list">

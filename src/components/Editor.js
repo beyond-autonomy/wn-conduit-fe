@@ -39,6 +39,7 @@ class Editor extends React.PureComponent {
     this.changeTitle = updateFieldEvent('title')
     this.changeDescription = updateFieldEvent('description')
     this.changeBody = updateFieldEvent('body')
+    this.changeImage = updateFieldEvent('image')
     this.changeTagInput = updateFieldEvent('tagInput')
 
     this.watchForEnter = ev => {
@@ -58,6 +59,7 @@ class Editor extends React.PureComponent {
         title: this.props.title,
         description: this.props.description,
         body: this.props.body,
+        image: this.props.image,
         tagList: this.props.tagList
       }
 
@@ -119,6 +121,16 @@ class Editor extends React.PureComponent {
                       placeholder="What's this article about?"
                       value={this.props.description || ''}
                       onChange={this.changeDescription} />
+                  </fieldset>
+
+                  <fieldset className='form-group'>
+                    <input
+                      className='form-control'
+                      type='text'
+                      placeholder='URL of article feed image'
+                      value={this.props.image || ''}
+                      onChange={this.changeImage}
+                    />
                   </fieldset>
 
                   <fieldset className='form-group'>

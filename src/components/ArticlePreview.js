@@ -59,7 +59,8 @@ const ArticlePreview = React.memo(props => {
       <Link to={`/article/${article.slug}`} className="preview-link">
         <h1>{article.title}</h1>
         <p>{article.description}</p>
-        <span>Read more...</span>
+        <img src={article.image || 'https://images.pexels.com/photos/2199293/pexels-photo-2199293.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260'} width="80%"/>
+        <div><span>Read more...</span>
         <ul className="tag-list">
           {
             article.tagList.map(tag => {
@@ -71,6 +72,7 @@ const ArticlePreview = React.memo(props => {
             })
           }
         </ul>
+        </div>
       </Link>
     </div>
   );
